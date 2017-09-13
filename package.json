@@ -1,0 +1,38 @@
+{
+  "name": "dfxptovtt",
+  "version": "0.0.1",
+  "description": "Command line coverter from DFXP to VTT written on Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helmutgranda/dfxptovtt.git"
+  },
+  "keywords": [
+    "vtt",
+    "dfxp"
+  ],
+  "author": "Helmut Granda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helmutgranda/dfxptovtt/issues"
+  },
+  "homepage": "https://github.com/helmutgranda/dfxptovtt#readme",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "cheerio": "^1.0.0-rc.2",
+    "clear": "0.0.1",
+    "clui": "^0.3.6",
+    "figlet": "^1.2.0",
+    "github": "^11.0.0",
+    "inquirer": "^3.2.3",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "preferences": "^0.2.1",
+    "simple-git": "^1.77.0",
+    "touch": "^3.1.0"
+  }
+}

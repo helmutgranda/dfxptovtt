@@ -9,6 +9,7 @@ var fs          = require('fs');
 var cheerio = require('cheerio')
 var status = '';
 var $ = ''
+var fileName = '';
 
 clear();
 
@@ -55,7 +56,7 @@ function processDFXPFile(file) {
         
     status = new Spinner('Parsing Data...');
     status.start();
-
+    fileName = file.split("/").pop().replace(".dfxp","");
     $ = cheerio.load( fs.readFileSync(file), {xmlMode: true} );
     $('div').map( processLang );
 
@@ -65,7 +66,7 @@ function processLang(i, item) {
     var lang = $(item).attr('xml:lang');
     var allCopy = $(item).children().map(processItem);
     var finalCopy = 'WEBVTT\n\n' + allCopy.get().join('\n') ;
-    fs.writeFile('test_'+lang+'.txt', finalCopy, writeTextCallBack );
+    fs.writeFile(`dist/test_${lang}_${fileName}.txt`, finalCopy, writeTextCallBack );
 }
 
 function writeTextCallBack(err) {
